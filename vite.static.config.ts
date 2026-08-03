@@ -21,6 +21,7 @@ const ROUTES = [
 ];
 
 export default defineConfig({
+  nitro: false,
   tanstackStart: {
     spa: { enabled: true },
     prerender: {
