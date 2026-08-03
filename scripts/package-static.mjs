@@ -78,5 +78,33 @@ ErrorDocument 404 /index.html
 
 await writeFile(resolve(target, ".htaccess"), htaccess, "utf8");
 
+// Static sitemap.xml (the server route version does not exist on static hosting).
+const SITE_URL = process.env.SITE_URL ?? "https://www.seudominio.com.br";
+const ROUTES = [
+  ["/", "weekly", "1.0"],
+  ["/planos", "weekly", "0.9"],
+  ["/servicos", "monthly", "0.8"],
+  ["/cobertura", "monthly", "0.8"],
+  ["/sobre-nos", "monthly", "0.6"],
+  ["/contato", "monthly", "0.7"],
+  ["/blog", "weekly", "0.6"],
+  ["/perguntas-frequentes", "monthly", "0.5"],
+  ["/area-do-assinante", "monthly", "0.5"],
+  ["/lgpd", "yearly", "0.3"],
+  ["/politica-de-privacidade", "yearly", "0.3"],
+  ["/termo-de-responsabilidade", "yearly", "0.3"],
+];
+const base = SITE_URL.replace(/\/$/, "");
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${ROUTES.map(([path, changefreq, priority]) => `  <url>
+    <loc>${base}${path}</loc>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`).join("\n")}
+</urlset>
+`;
+await writeFile(resolve(target, "sitemap.xml"), sitemap, "utf8");
+
 console.log(`\nStatic site ready in dist-static/ (from ${source.replace(root + "/", "")})`);
 console.log("Upload the CONTENTS of dist-static/ (including .htaccess) to public_html/\n");
