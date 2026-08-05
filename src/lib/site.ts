@@ -3,9 +3,9 @@ export const SITE = {
   slogan: "Conectando Você ao Mundo",
   instagram: "https://instagram.com/fibertechba",
   instagramHandle: "@fibertechba",
-  phoneDisplay: "(71) 9116-5630",
-  whatsappNumber: "5571911656300",
-  whatsapp: "https://wa.me/5571911656300",
+  phoneDisplay: "(71) 99116-5630",
+  whatsappNumber: "5571991165630",
+  whatsapp: "https://wa.me/5571991165630",
   email: "fibertechba@gmail.com",
   address: "Av. Principal, 000 — Centro, Bahia, Brasil",
   hours: "Segunda a sábado, das 08h às 18h",
@@ -46,6 +46,7 @@ export const NAV = [
   { to: "/sobre-nos", label: "Sobre Nós" },
   { to: "/area-do-assinante", label: "Área do Assinante" },
   { to: "/contato", label: "Contato" },
+  { to: "/formulario", label: "Formulário" },
   { to: "/blog", label: "Blog" },
 ] as const;
 
