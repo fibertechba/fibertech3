@@ -36,16 +36,32 @@ export const Route = createFileRoute("/area-do-assinante")({
   component: Assinante,
 });
 
-const CARDS = [
-  { icon: Wallet, title: "Portal Financeiro", text: "Visualize faturas, vencimentos e formas de pagamento." },
-  { icon: Receipt, title: "Segunda Via", text: "Emita o boleto ou PIX da sua fatura atual." },
-  { icon: History, title: "Histórico de Pagamentos", text: "Acompanhe todos os pagamentos realizados." },
-  { icon: LifeBuoy, title: "Solicitação de Suporte", text: "Abra um atendimento técnico em poucos cliques." },
-  { icon: KeyRound, title: "Alteração da Senha Wi-Fi", text: "Troque o nome e a senha da sua rede." },
-  { icon: Bot, title: "Assistente Virtual", text: "Resolva dúvidas rápidas a qualquer hora do dia." },
-  { icon: Bell, title: "Notificações", text: "Receba avisos de manutenção e novidades." },
-  { icon: Tv, title: "Aplicativo de TV", text: "Gerencie seu acesso ao Aplicativo de TV." },
+const CARDS: {
+  icon: typeof Wallet;
+  title: string;
+  text: string;
+  href?: string;
+}[] = [
+  {
+    icon: Wallet,
+    title: "Central do Assinante",
+    text: "Acesse seu plano, faturas e serviços no portal oficial.",
+    href: SITE.centralAssinante,
+  },
+  {
+    icon: Receipt,
+    title: "Segunda Via de Boletos",
+    text: "Emita o boleto ou PIX da sua fatura atual.",
+    href: SITE.segundaVia,
+  },
+  { icon: History, title: "Histórico de Pagamentos", text: "Acompanhe todos os pagamentos realizados.", href: SITE.centralAssinante },
+  { icon: LifeBuoy, title: "Solicitação de Suporte", text: "Abra um atendimento técnico em poucos cliques.", href: WA.suporte },
+  { icon: KeyRound, title: "Alteração da Senha Wi-Fi", text: "Troque o nome e a senha da sua rede.", href: WA.suporte },
+  { icon: Bot, title: "Assistente Virtual", text: "Resolva dúvidas rápidas a qualquer hora do dia.", href: WA.assinante },
+  { icon: Bell, title: "Notificações", text: "Receba avisos de manutenção e novidades.", href: SITE.centralAssinante },
+  { icon: Tv, title: "Aplicativo de TV", text: "Gerencie seu acesso ao Aplicativo de TV.", href: WA.assinante },
 ];
+
 
 function Assinante() {
   return (
