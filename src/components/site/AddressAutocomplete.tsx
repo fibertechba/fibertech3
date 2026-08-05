@@ -44,7 +44,7 @@ export function AddressAutocomplete({
   name?: string;
   value: string;
   onChange: (v: string) => void;
-  onPlace?: (info: { address: string; cep?: string; mapUrl?: string }) => void;
+  onPlace?: (info: { address: string; cep?: string | undefined; mapUrl?: string | undefined }) => void;
   placeholder?: string;
   required?: boolean;
   className?: string;
