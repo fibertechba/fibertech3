@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import logo from "@/assets/fibertech-logo.png.asset.json";
-import { NAV, SITE, WA } from "@/lib/site";
+import { NAV, WA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Header() {
