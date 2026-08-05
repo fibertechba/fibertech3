@@ -44,14 +44,30 @@ function Contato() {
           <Reveal className="lg:col-span-3">
             <form
               className="glass-strong h-full rounded-4xl p-8 sm:p-10"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                toast.success("Mensagem enviada!", {
-                  description: "Nosso time entrará em contato em breve.",
+                const form = e.currentTarget as HTMLFormElement;
+                const fd = new FormData(form);
+                const ok = await sendLead("Nova mensagem do site — Fiber Tech", {
+                  Nome: String(fd.get("nome") ?? ""),
+                  "Telefone/WhatsApp": String(fd.get("telefone") ?? ""),
+                  "E-mail": String(fd.get("email") ?? ""),
+                  Assunto: String(fd.get("assunto") ?? ""),
+                  Mensagem: String(fd.get("mensagem") ?? ""),
                 });
-                (e.currentTarget as HTMLFormElement).reset();
+                if (ok) {
+                  toast.success("Mensagem enviada!", {
+                    description: "Nosso time entrará em contato em breve.",
+                  });
+                  form.reset();
+                } else {
+                  toast.error("Não conseguimos enviar sua mensagem", {
+                    description: "Tente novamente ou fale com a gente pelo WhatsApp.",
+                  });
+                }
               }}
             >
+
               <h2 className="text-2xl font-bold">Envie sua mensagem</h2>
               <div className="mt-7 grid gap-5 sm:grid-cols-2">
                 <div>
