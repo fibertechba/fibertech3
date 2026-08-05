@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Phone, Mail } from "lucide-react";
 import logo from "@/assets/fibertech-logo.png.asset.json";
-import { NAV, SITE } from "@/lib/site";
+import { NAV, SITE, WA } from "@/lib/site";
 
 const LEGAL = [
   { to: "/termo-de-responsabilidade", label: "Termo de Responsabilidade" },
@@ -30,7 +30,7 @@ export function Footer() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href={SITE.whatsapp}
+              href={WA.contato}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground"

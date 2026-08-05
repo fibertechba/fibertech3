@@ -1,15 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle, MapPin } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { WA } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
 export function CtaSection({
   title = "Pronto para se tornar cliente Fiber Tech?",
   text = "Consulte a disponibilidade no seu endereço e solicite sua instalação hoje mesmo.",
+  whatsappHref = WA.planos,
 }: {
   title?: string;
   text?: string;
+  whatsappHref?: string;
 }) {
+
   return (
     <section className="section-pad relative overflow-hidden">
       <div className="aurora" aria-hidden="true" />
@@ -31,7 +34,7 @@ export function CtaSection({
               <MapPin className="h-4 w-4" aria-hidden="true" /> Consultar Cobertura
             </Link>
             <a
-              href={SITE.whatsapp}
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"

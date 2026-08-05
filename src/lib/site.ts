@@ -4,11 +4,39 @@ export const SITE = {
   instagram: "https://instagram.com/fibertechba",
   instagramHandle: "@fibertechba",
   phoneDisplay: "(71) 9116-5630",
+  whatsappNumber: "5571911656300",
   whatsapp: "https://wa.me/5571911656300",
-  email: "contato@fibertech.com.br",
+  email: "fibertechba@gmail.com",
   address: "Av. Principal, 000 — Centro, Bahia, Brasil",
   hours: "Segunda a sábado, das 08h às 18h",
+  centralAssinante: "https://applink.com.br/receitanet",
+  segundaVia: "https://centralassinante.com.br/",
 };
+
+/** Monta um link do WhatsApp com mensagem pré-preenchida explicando o motivo do contato. */
+export function waLink(message: string) {
+  return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+export const WA = {
+  geral: waLink("Olá, vim do site da Fiber Tech e gostaria de mais informações."),
+  planos: waLink(
+    "Olá, vim do site da Fiber Tech e gostaria de conhecer os planos de internet fibra óptica.",
+  ),
+  cobertura: waLink(
+    "Olá, vim do site da Fiber Tech e gostaria de consultar a cobertura no meu endereço.",
+  ),
+  suporte: waLink("Olá, vim do site da Fiber Tech e preciso de suporte técnico."),
+  assinante: waLink(
+    "Olá, vim do site da Fiber Tech e preciso de ajuda com a Central do Assinante / minha conta.",
+  ),
+  contato: waLink("Olá, vim do site da Fiber Tech e gostaria de falar com o atendimento."),
+  plano: (nome: string, velocidade?: string) =>
+    waLink(
+      `Olá, vim do site e tenho interesse no plano "${nome}"${velocidade ? ` (${velocidade})` : ""}.`,
+    ),
+};
+
 
 export const NAV = [
   { to: "/", label: "Início" },

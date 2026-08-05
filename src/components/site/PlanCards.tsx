@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { Check, Zap } from "lucide-react";
-import { PLANS } from "@/lib/site";
+import { PLANS, WA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
+
 
 export function PlanCards() {
   return (
@@ -43,8 +43,10 @@ export function PlanCards() {
                 </li>
               ))}
             </ul>
-            <Link
-              to="/contato"
+            <a
+              href={WA.plano(plan.name, plan.speed)}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "mt-8 rounded-full px-6 py-3 text-center text-sm font-semibold transition-transform hover:scale-[1.03]",
                 plan.featured
@@ -53,7 +55,8 @@ export function PlanCards() {
               )}
             >
               Contratar Agora
-            </Link>
+            </a>
+
           </article>
         </Reveal>
       ))}

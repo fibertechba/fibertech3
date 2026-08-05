@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import logo from "@/assets/fibertech-logo.png.asset.json";
-import { NAV, SITE } from "@/lib/site";
+import { NAV, WA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -52,7 +52,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <a
-            href={SITE.whatsapp}
+            href={WA.contato}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03] sm:inline-flex"
@@ -93,7 +93,7 @@ export function Header() {
                 </Link>
               ))}
               <a
-                href={SITE.whatsapp}
+                href={WA.contato}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-1 rounded-xl bg-gradient-brand px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
