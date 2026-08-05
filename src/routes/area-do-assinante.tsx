@@ -13,7 +13,7 @@ import {
 import { PageHero } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import { CtaSection } from "@/components/site/CtaSection";
-import { SITE } from "@/lib/site";
+import { SITE, WA } from "@/lib/site";
 
 export const Route = createFileRoute("/area-do-assinante")({
   head: () => ({

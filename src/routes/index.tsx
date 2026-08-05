@@ -21,7 +21,7 @@ import { PlanCards } from "@/components/site/PlanCards";
 import { CtaSection } from "@/components/site/CtaSection";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/Sections";
-import { SITE } from "@/lib/site";
+import { SITE, WA } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({

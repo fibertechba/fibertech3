@@ -3,7 +3,7 @@ import { MessageCircle, Instagram, Phone, Mail, MapPin, Clock } from "lucide-rea
 import { toast } from "sonner";
 import { PageHero } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
-import { SITE } from "@/lib/site";
+import { SITE, WA } from "@/lib/site";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
