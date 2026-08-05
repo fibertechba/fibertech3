@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { Check, Zap } from "lucide-react";
-import { PLANS } from "@/lib/site";
+import { PLANS, WA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
+
 
 export function PlanCards() {
   return (
