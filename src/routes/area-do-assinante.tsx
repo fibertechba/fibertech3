@@ -92,7 +92,7 @@ function Assinante() {
                 resolve tudo pelo WhatsApp.
               </p>
               <a
-                href={SITE.whatsapp}
+                href={WA.assinante}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-7 inline-flex rounded-full bg-gradient-brand px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow"

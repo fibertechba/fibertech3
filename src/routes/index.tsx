@@ -127,7 +127,7 @@ function Home() {
               <MapPin className="h-4 w-4" aria-hidden="true" /> Consultar Cobertura
             </Link>
             <a
-              href={SITE.whatsapp}
+              href={WA.planos}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-4 text-sm font-semibold transition-colors hover:bg-secondary"
