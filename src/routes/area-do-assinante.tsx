@@ -80,7 +80,12 @@ function Assinante() {
         <div className="mx-auto grid max-w-6xl gap-5 px-5 sm:grid-cols-2 lg:grid-cols-4">
           {CARDS.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.05}>
-              <article className="glass group h-full rounded-3xl p-7 transition-transform duration-500 hover:-translate-y-1.5">
+              <a
+                href={c.href ?? WA.assinante}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass group flex h-full flex-col rounded-3xl p-7 transition-transform duration-500 hover:-translate-y-1.5"
+              >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-brand text-primary-foreground shadow-glow">
                   <c.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
@@ -92,7 +97,7 @@ function Assinante() {
                   />
                 </h2>
                 <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
-              </article>
+              </a>
             </Reveal>
           ))}
         </div>
@@ -104,21 +109,40 @@ function Assinante() {
             <div className="glass-strong rounded-4xl p-10">
               <h2 className="text-2xl font-bold">Acessar minha conta</h2>
               <p className="mt-3 text-sm text-muted-foreground">
-                O acesso ao portal do assinante estará disponível em breve. Enquanto isso, nosso time
-                resolve tudo pelo WhatsApp.
+                Acesse a Central do Assinante para ver seu plano e a Segunda Via para emitir seus
+                boletos. Precisa de ajuda? Fale com a gente pelo WhatsApp.
               </p>
-              <a
-                href={WA.assinante}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex rounded-full bg-gradient-brand px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow"
-              >
-                Falar no WhatsApp
-              </a>
+              <div className="mt-7 flex flex-wrap justify-center gap-3">
+                <a
+                  href={SITE.centralAssinante}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex rounded-full bg-gradient-brand px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow"
+                >
+                  Central do Assinante
+                </a>
+                <a
+                  href={SITE.segundaVia}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex rounded-full border border-border px-8 py-4 text-sm font-semibold hover:bg-secondary"
+                >
+                  Segunda Via de Boletos
+                </a>
+                <a
+                  href={WA.assinante}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex rounded-full border border-border px-8 py-4 text-sm font-semibold hover:bg-secondary"
+                >
+                  Falar no WhatsApp
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
+
 
       <CtaSection title="Ainda não é cliente Fiber Tech?" />
     </>
