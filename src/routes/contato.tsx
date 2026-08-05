@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { PageHero } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE, WA } from "@/lib/site";
+import { sendLead } from "@/lib/leads";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
