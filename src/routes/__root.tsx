@@ -113,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           slogan: "Conectando Você ao Mundo",
           description:
             "Provedor de internet 100% fibra óptica com planos residenciais e empresariais.",
-          telephone: "+55 71 9116-5630",
+          telephone: "+55 71 99116-5630",
           areaServed: "Bahia, Brasil",
           sameAs: ["https://instagram.com/fibertechba"],
           address: {

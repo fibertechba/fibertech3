@@ -87,6 +87,7 @@ const ROUTES = [
   ["/cobertura", "monthly", "0.8"],
   ["/sobre-nos", "monthly", "0.6"],
   ["/contato", "monthly", "0.7"],
+  ["/formulario", "monthly", "0.8"],
   ["/blog", "weekly", "0.6"],
   ["/perguntas-frequentes", "monthly", "0.5"],
   ["/area-do-assinante", "monthly", "0.5"],

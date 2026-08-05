@@ -12,6 +12,7 @@ const ROUTES = [
   "/cobertura",
   "/sobre-nos",
   "/contato",
+  "/formulario",
   "/blog",
   "/perguntas-frequentes",
   "/area-do-assinante",

@@ -14,6 +14,7 @@ import { Route as AreaDoAssinanteRouteImport } from './routes/area-do-assinante'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CoberturaRouteImport } from './routes/cobertura'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as FormularioRouteImport } from './routes/formulario'
 import { Route as LgpdRouteImport } from './routes/lgpd'
 import { Route as PerguntasFrequentesRouteImport } from './routes/perguntas-frequentes'
 import { Route as PlanosRouteImport } from './routes/planos'
@@ -46,6 +47,11 @@ const CoberturaRoute = CoberturaRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormularioRoute = FormularioRouteImport.update({
+  id: '/formulario',
+  path: '/formulario',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LgpdRoute = LgpdRouteImport.update({
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRoute
   '/cobertura': typeof CoberturaRoute
   '/contato': typeof ContatoRoute
+  '/formulario': typeof FormularioRoute
   '/lgpd': typeof LgpdRoute
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/planos': typeof PlanosRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/cobertura': typeof CoberturaRoute
   '/contato': typeof ContatoRoute
+  '/formulario': typeof FormularioRoute
   '/lgpd': typeof LgpdRoute
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/planos': typeof PlanosRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRoute
   '/cobertura': typeof CoberturaRoute
   '/contato': typeof ContatoRoute
+  '/formulario': typeof FormularioRoute
   '/lgpd': typeof LgpdRoute
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/planos': typeof PlanosRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/cobertura'
     | '/contato'
+    | '/formulario'
     | '/lgpd'
     | '/perguntas-frequentes'
     | '/planos'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/cobertura'
     | '/contato'
+    | '/formulario'
     | '/lgpd'
     | '/perguntas-frequentes'
     | '/planos'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/cobertura'
     | '/contato'
+    | '/formulario'
     | '/lgpd'
     | '/perguntas-frequentes'
     | '/planos'
@@ -189,6 +201,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRoute
   CoberturaRoute: typeof CoberturaRoute
   ContatoRoute: typeof ContatoRoute
+  FormularioRoute: typeof FormularioRoute
   LgpdRoute: typeof LgpdRoute
   PerguntasFrequentesRoute: typeof PerguntasFrequentesRoute
   PlanosRoute: typeof PlanosRoute
@@ -234,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formulario': {
+      id: '/formulario'
+      path: '/formulario'
+      fullPath: '/formulario'
+      preLoaderRoute: typeof FormularioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lgpd': {
@@ -301,6 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRoute,
   CoberturaRoute: CoberturaRoute,
   ContatoRoute: ContatoRoute,
+  FormularioRoute: FormularioRoute,
   LgpdRoute: LgpdRoute,
   PerguntasFrequentesRoute: PerguntasFrequentesRoute,
   PlanosRoute: PlanosRoute,
