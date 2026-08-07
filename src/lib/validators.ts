@@ -91,10 +91,10 @@ export async function lookupCEP(cep: string): Promise<CepAddress | null> {
     const data = (await res.json()) as Record<string, string> & { erro?: boolean | string };
     if (data.erro) return null;
     return {
-      logradouro: data.logradouro ?? "",
-      bairro: data.bairro ?? "",
-      cidade: data.localidade ?? "",
-      uf: data.uf ?? "",
+      logradouro: data["logradouro"] ?? "",
+      bairro: data["bairro"] ?? "",
+      cidade: data["localidade"] ?? "",
+      uf: data["uf"] ?? "",
     };
   } catch {
     return null;
