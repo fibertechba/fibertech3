@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, UserRound } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import logo from "@/assets/fibertech-logo.png.asset.json";
 import { NAV, WA } from "@/lib/site";
@@ -51,6 +51,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            to="/area-do-assinante"
+            className="hidden items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary sm:inline-flex"
+          >
+            <UserRound className="h-4 w-4" aria-hidden="true" />
+            Área do Assinante
+          </Link>
           <a
             href={WA.contato}
             target="_blank"
