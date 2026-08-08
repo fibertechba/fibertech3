@@ -99,6 +99,13 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/area-do-assinante"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground data-[status=active]:text-foreground"
+              >
+                Área do Assinante
+              </Link>
               <a
                 href={WA.contato}
                 target="_blank"

@@ -44,7 +44,6 @@ export const NAV = [
   { to: "/servicos", label: "Serviços" },
   { to: "/cobertura", label: "Cobertura" },
   { to: "/sobre-nos", label: "Sobre Nós" },
-  { to: "/area-do-assinante", label: "Área do Assinante" },
   { to: "/contato", label: "Contato" },
   { to: "/formulario", label: "Formulário" },
   { to: "/blog", label: "Blog" },

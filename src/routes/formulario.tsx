@@ -177,12 +177,6 @@ function Formulario() {
                       {p.cents}/mês
                     </option>
                   ))}
-                  <option value="Plano empresarial / personalizado">
-                    Plano empresarial / personalizado
-                  </option>
-                  <option value="Ainda não sei — quero orientação">
-                    Ainda não sei — quero orientação
-                  </option>
                 </select>
               </div>
 
