@@ -31,6 +31,8 @@ export function Header() {
             alt="Logotipo Fiber Tech"
             width={160}
             height={44}
+            fetchPriority="high"
+            decoding="async"
             className="h-11 w-auto rounded-lg object-cover object-center"
             style={{ objectFit: "cover", aspectRatio: "3.6 / 1" }}
           />

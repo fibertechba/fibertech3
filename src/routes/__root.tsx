@@ -15,6 +15,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import logo from "@/assets/fibertech-logo.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -99,6 +100,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://maps.googleapis.com" },
+      { rel: "preload", as: "image", href: logo.url, fetchpriority: "high" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",

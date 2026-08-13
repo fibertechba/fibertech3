@@ -21,6 +21,7 @@ export function Footer() {
             width={220}
             height={62}
             loading="lazy"
+            decoding="async"
             className="h-14 w-auto rounded-lg object-cover"
             style={{ objectFit: "cover", aspectRatio: "3.6 / 1" }}
           />
