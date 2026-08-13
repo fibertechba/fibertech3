@@ -55,6 +55,35 @@ DirectoryIndex index.html
   RewriteRule . /index.html [L]
 </IfModule>
 
+# Security headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header unset X-Powered-By
+  Header always unset Server
+  # Hashed build assets never change
+  <FilesMatch "\\.(js|css|woff2|png|jpe?g|svg|webp|avif)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\\.(html|xml|json|txt)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Block access to sensitive files and hide directory listings
+Options -Indexes
+<FilesMatch "(^\\.(env|git).*|composer\\.(json|lock)|package(-lock)?\\.json|.*\\.(bak|config|ini|log|sh|sql|ts|map)$)">
+  Require all denied
+</FilesMatch>
+<Files ".htaccess">
+  Require all denied
+</Files>
+ServerSignature Off
+
 # Caching
 <IfModule mod_expires.c>
   ExpiresActive On
