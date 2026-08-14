@@ -66,16 +66,22 @@ function Formulario() {
       return;
     }
     setCepStatus("loading");
-    const found = await lookupCEP(value);
-    if (!found) {
+    const result = await lookupCEP(value);
+    if (!result.ok) {
       setCepStatus("erro");
+      if (result.reason === "unavailable") {
+        toast.error("Serviço de consulta indisponível", {
+          description: "Preencha o endereço manualmente e tente novamente mais tarde.",
+        });
+      }
       return;
     }
     setCepStatus("ok");
-    setLogradouro(found.logradouro);
-    setBairro(found.bairro);
-    setCidade(found.cidade);
-    setUf(found.uf);
+    const { logradouro, bairro, cidade, uf } = result.address;
+    setLogradouro(logradouro);
+    setBairro(bairro);
+    setCidade(cidade);
+    setUf(uf);
   }
 
   return (
