@@ -7,7 +7,7 @@ export const SITE = {
   whatsappNumber: "5571991165630",
   whatsapp: "https://wa.me/5571991165630",
   email: "fibertechba@gmail.com",
-  address: "Av. Principal, 000 — Centro, Bahia, Brasil",
+  address: "Av. Sergio de Carvalho, N 24, CEP 40230-680",
   hours: "Segunda a sábado, das 08h às 18h",
   centralAssinante: "https://applink.com.br/receitanet",
   segundaVia: "https://centralassinante.com.br/",
