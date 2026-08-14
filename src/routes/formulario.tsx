@@ -64,12 +64,15 @@ function Formulario() {
   async function buscarCep(value: string) {
     if (onlyDigits(value).length !== 8) {
       setCepStatus("idle");
+      setCepErro(null);
       return;
     }
     setCepStatus("loading");
+    setCepErro(null);
     const result = await lookupCEP(value);
     if (!result.ok) {
       setCepStatus("erro");
+      setCepErro(result.reason === "unavailable" ? "unavailable" : "not_found");
       if (result.reason === "unavailable") {
         toast.error("Serviço de consulta indisponível", {
           description: "Preencha o endereço manualmente e tente novamente mais tarde.",
@@ -323,7 +326,9 @@ function Formulario() {
                   )}
                   {cepStatus === "erro" && (
                     <p className="mt-1.5 text-xs text-destructive">
-                      CEP não encontrado. Preencha o endereço manualmente.
+                      {cepErro === "unavailable"
+                        ? "Não foi possível consultar o CEP agora. Preencha o endereço manualmente."
+                        : "CEP não encontrado. Preencha o endereço manualmente."}
                     </p>
                   )}
                   {cepStatus === "ok" && (
