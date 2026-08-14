@@ -8,6 +8,7 @@ import { CtaSection } from "@/components/site/CtaSection";
 import { AddressAutocomplete } from "@/components/site/AddressAutocomplete";
 import { sendLead } from "@/lib/leads";
 import { waLink, WA } from "@/lib/site";
+import { formatCEP, lookupCEP, onlyDigits } from "@/lib/validators";
 
 export const Route = createFileRoute("/cobertura")({
   head: () => ({
@@ -124,7 +125,25 @@ function Cobertura() {
                     inputMode="numeric"
                     required
                     value={cep}
-                    onChange={(e) => setCep(e.target.value)}
+                    onChange={async (e) => {
+                      const formatted = formatCEP(e.target.value);
+                      setCep(formatted);
+                      if (onlyDigits(formatted).length === 8) {
+                        const addr = await lookupCEP(formatted);
+                        if (addr) {
+                          const full = [addr.logradouro, addr.bairro, addr.cidade, addr.uf]
+                            .filter(Boolean)
+                            .join(", ");
+                          setEndereco(full);
+                          setMapUrl(
+                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(full)}`,
+                          );
+                          toast.success("Endereço preenchido pelo CEP", {
+                            description: full,
+                          });
+                        }
+                      }
+                    }}
                     placeholder="00000-000"
                     className={INPUT}
                   />
@@ -137,7 +156,7 @@ function Cobertura() {
                     value={endereco}
                     onChange={setEndereco}
                     onPlace={(info) => {
-                      if (info.cep) setCep(info.cep);
+                      if (info.cep) setCep(formatCEP(info.cep));
                       setMapUrl(info.mapUrl ?? "");
                     }}
                     required
