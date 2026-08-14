@@ -316,7 +316,10 @@ function Formulario() {
                       const v = formatCEP(e.target.value);
                       setCep(v);
                       if (onlyDigits(v).length === 8) void buscarCep(v);
-                      else setCepStatus("idle");
+                      else {
+                        setCepStatus("idle");
+                        setCepErro(null);
+                      }
                     }}
                     onBlur={(e) => void buscarCep(e.target.value)}
                     placeholder="00000-000"
