@@ -165,6 +165,7 @@ function Formulario() {
                   setUf("");
                   setVencimento("");
                   setCepStatus("idle");
+                  setCepErro(null);
                 } else {
                   toast.error("Não conseguimos enviar seu cadastro", {
                     description: "Tente novamente ou fale com a gente pelo WhatsApp.",
