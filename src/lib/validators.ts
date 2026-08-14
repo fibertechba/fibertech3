@@ -81,22 +81,35 @@ export type CepAddress = {
   uf: string;
 };
 
-/** Consulta o CEP na base pública ViaCEP. Retorna null se inválido/não encontrado. */
-export async function lookupCEP(cep: string): Promise<CepAddress | null> {
+export type CepResult =
+  | { ok: true; address: CepAddress }
+  | { ok: false; reason: "invalid" | "not_found" | "unavailable" };
+
+/**
+ * Consulta o CEP na base pública ViaCEP.
+ * Retorna um resultado discriminado para permitir tratamento de erro amigável:
+ * - "invalid": formato/quantidade de dígitos incorreta
+ * - "not_found": CEP válido mas inexistente na base
+ * - "unavailable": falha de rede / serviço ViaCEP indisponível
+ */
+export async function lookupCEP(cep: string): Promise<CepResult> {
   const d = onlyDigits(cep);
-  if (d.length !== 8) return null;
+  if (d.length !== 8) return { ok: false, reason: "invalid" };
   try {
     const res = await fetch(`https://viacep.com.br/ws/${d}/json/`);
-    if (!res.ok) return null;
+    if (!res.ok) return { ok: false, reason: "unavailable" };
     const data = (await res.json()) as Record<string, string> & { erro?: boolean | string };
-    if (data.erro) return null;
+    if (data.erro) return { ok: false, reason: "not_found" };
     return {
-      logradouro: data["logradouro"] ?? "",
-      bairro: data["bairro"] ?? "",
-      cidade: data["localidade"] ?? "",
-      uf: data["uf"] ?? "",
+      ok: true,
+      address: {
+        logradouro: data["logradouro"] ?? "",
+        bairro: data["bairro"] ?? "",
+        cidade: data["localidade"] ?? "",
+        uf: data["uf"] ?? "",
+      },
     };
   } catch {
-    return null;
+    return { ok: false, reason: "unavailable" };
   }
 }
