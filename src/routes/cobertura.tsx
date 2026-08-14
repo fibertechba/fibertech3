@@ -129,17 +129,25 @@ function Cobertura() {
                       const formatted = formatCEP(e.target.value);
                       setCep(formatted);
                       if (onlyDigits(formatted).length === 8) {
-                        const addr = await lookupCEP(formatted);
-                        if (addr) {
-                          const full = [addr.logradouro, addr.bairro, addr.cidade, addr.uf]
-                            .filter(Boolean)
-                            .join(", ");
+                        const result = await lookupCEP(formatted);
+                        if (result.ok) {
+                          const { logradouro, bairro, cidade, uf } = result.address;
+                          const full = [logradouro, bairro, cidade, uf].filter(Boolean).join(", ");
                           setEndereco(full);
                           setMapUrl(
                             `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(full)}`,
                           );
                           toast.success("Endereço preenchido pelo CEP", {
                             description: full,
+                          });
+                        } else if (result.reason === "not_found") {
+                          toast.error("CEP não encontrado", {
+                            description: "Verifique o CEP digitado e tente novamente.",
+                          });
+                        } else if (result.reason === "unavailable") {
+                          toast.error("Serviço de consulta indisponível", {
+                            description:
+                              "Não foi possível consultar o CEP agora. Preencha o endereço manualmente.",
                           });
                         }
                       }
