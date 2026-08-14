@@ -52,6 +52,7 @@ function Formulario() {
   const [cidade, setCidade] = useState("");
   const [uf, setUf] = useState("");
   const [cepStatus, setCepStatus] = useState<"idle" | "loading" | "ok" | "erro">("idle");
+  const [cepErro, setCepErro] = useState<"not_found" | "unavailable" | null>(null);
   const [vencimento, setVencimento] = useState("");
   const [enviando, setEnviando] = useState(false);
 
