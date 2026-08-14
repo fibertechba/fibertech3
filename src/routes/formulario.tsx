@@ -52,6 +52,7 @@ function Formulario() {
   const [cidade, setCidade] = useState("");
   const [uf, setUf] = useState("");
   const [cepStatus, setCepStatus] = useState<"idle" | "loading" | "ok" | "erro">("idle");
+  const [cepErro, setCepErro] = useState<"not_found" | "unavailable" | null>(null);
   const [vencimento, setVencimento] = useState("");
   const [enviando, setEnviando] = useState(false);
 
@@ -63,19 +64,28 @@ function Formulario() {
   async function buscarCep(value: string) {
     if (onlyDigits(value).length !== 8) {
       setCepStatus("idle");
+      setCepErro(null);
       return;
     }
     setCepStatus("loading");
-    const found = await lookupCEP(value);
-    if (!found) {
+    setCepErro(null);
+    const result = await lookupCEP(value);
+    if (!result.ok) {
       setCepStatus("erro");
+      setCepErro(result.reason === "unavailable" ? "unavailable" : "not_found");
+      if (result.reason === "unavailable") {
+        toast.error("Serviço de consulta indisponível", {
+          description: "Preencha o endereço manualmente e tente novamente mais tarde.",
+        });
+      }
       return;
     }
     setCepStatus("ok");
-    setLogradouro(found.logradouro);
-    setBairro(found.bairro);
-    setCidade(found.cidade);
-    setUf(found.uf);
+    const { logradouro, bairro, cidade, uf } = result.address;
+    setLogradouro(logradouro);
+    setBairro(bairro);
+    setCidade(cidade);
+    setUf(uf);
   }
 
   return (
@@ -155,6 +165,7 @@ function Formulario() {
                   setUf("");
                   setVencimento("");
                   setCepStatus("idle");
+                  setCepErro(null);
                 } else {
                   toast.error("Não conseguimos enviar seu cadastro", {
                     description: "Tente novamente ou fale com a gente pelo WhatsApp.",
@@ -305,7 +316,10 @@ function Formulario() {
                       const v = formatCEP(e.target.value);
                       setCep(v);
                       if (onlyDigits(v).length === 8) void buscarCep(v);
-                      else setCepStatus("idle");
+                      else {
+                        setCepStatus("idle");
+                        setCepErro(null);
+                      }
                     }}
                     onBlur={(e) => void buscarCep(e.target.value)}
                     placeholder="00000-000"
@@ -316,7 +330,9 @@ function Formulario() {
                   )}
                   {cepStatus === "erro" && (
                     <p className="mt-1.5 text-xs text-destructive">
-                      CEP não encontrado. Preencha o endereço manualmente.
+                      {cepErro === "unavailable"
+                        ? "Não foi possível consultar o CEP agora. Preencha o endereço manualmente."
+                        : "CEP não encontrado. Preencha o endereço manualmente."}
                     </p>
                   )}
                   {cepStatus === "ok" && (
