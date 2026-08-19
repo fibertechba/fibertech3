@@ -7,6 +7,7 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/sobre-nos")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "provedor de internet local, empresa de internet fibra óptica, sobre a Fiber Tech, internet Bahia" },
       { title: "Sobre Nós — Fiber Tech" },
       {
         name: "description",
@@ -18,9 +19,9 @@ export const Route = createFileRoute("/sobre-nos")({
         property: "og:description",
         content: "Nossa história, missão e a tecnologia que conecta você ao mundo.",
       },
-      { property: "og:url", content: "/sobre-nos" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/sobre-nos" },
     ],
-    links: [{ rel: "canonical", href: "/sobre-nos" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/sobre-nos" }],
   }),
   component: Sobre,
 });

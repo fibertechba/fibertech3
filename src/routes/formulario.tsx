@@ -19,6 +19,7 @@ import {
 export const Route = createFileRoute("/formulario")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "cadastro internet fibra, contratar internet online, formulário de adesão internet, instalação de internet" },
       { title: "Formulário de Cadastro — Fiber Tech" },
       {
         name: "description",
@@ -32,9 +33,9 @@ export const Route = createFileRoute("/formulario")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/formulario" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/formulario" },
     ],
-    links: [{ rel: "canonical", href: "/formulario" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/formulario" }],
   }),
   component: Formulario,
 });

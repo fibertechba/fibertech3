@@ -13,6 +13,7 @@ import { formatCEP, lookupCEP, onlyDigits } from "@/lib/validators";
 export const Route = createFileRoute("/cobertura")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "cobertura de internet, consultar cobertura fibra óptica, internet no meu endereço, viabilidade técnica internet, cobertura Fiber Tech" },
       { title: "Cobertura — Consulte a disponibilidade | Fiber Tech" },
       {
         name: "description",
@@ -24,9 +25,9 @@ export const Route = createFileRoute("/cobertura")({
         property: "og:description",
         content: "Verifique a disponibilidade da internet fibra óptica no seu endereço.",
       },
-      { property: "og:url", content: "/cobertura" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/cobertura" },
     ],
-    links: [{ rel: "canonical", href: "/cobertura" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/cobertura" }],
   }),
   component: Cobertura,
 });

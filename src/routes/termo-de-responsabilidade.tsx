@@ -15,9 +15,9 @@ export const Route = createFileRoute("/termo-de-responsabilidade")({
         property: "og:description",
         content: "Condições de uso do serviço, equipamentos e responsabilidades do assinante.",
       },
-      { property: "og:url", content: "/termo-de-responsabilidade" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/termo-de-responsabilidade" },
     ],
-    links: [{ rel: "canonical", href: "/termo-de-responsabilidade" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/termo-de-responsabilidade" }],
   }),
   component: () => (
     <LegalPage

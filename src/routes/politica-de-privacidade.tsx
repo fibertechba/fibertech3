@@ -15,9 +15,9 @@ export const Route = createFileRoute("/politica-de-privacidade")({
         property: "og:description",
         content: "Como tratamos e protegemos os seus dados pessoais.",
       },
-      { property: "og:url", content: "/politica-de-privacidade" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/politica-de-privacidade" },
     ],
-    links: [{ rel: "canonical", href: "/politica-de-privacidade" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/politica-de-privacidade" }],
   }),
   component: () => (
     <LegalPage

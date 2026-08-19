@@ -9,6 +9,7 @@ import { sendLead } from "@/lib/leads";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "contato provedor de internet, telefone internet fibra, whatsapp internet, atendimento Fiber Tech, contratar internet" },
       { title: "Contato — Fale com a Fiber Tech" },
       {
         name: "description",
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/contato")({
         property: "og:description",
         content: "Solicite instalação, suporte ou informações sobre nossos planos.",
       },
-      { property: "og:url", content: "/contato" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/contato" },
     ],
-    links: [{ rel: "canonical", href: "/contato" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/contato" }],
   }),
   component: Contato,
 });

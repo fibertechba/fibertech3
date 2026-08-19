@@ -8,6 +8,7 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/planos")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "planos de internet, internet 100 mega, internet 200 mega, internet 300 mega, internet 500 mega, plano de internet barato, internet fibra óptica preço, Fiber Tech planos" },
       { title: "Planos de Internet Fibra Óptica — Fiber Tech" },
       {
         name: "description",
@@ -19,9 +20,9 @@ export const Route = createFileRoute("/planos")({
         property: "og:description",
         content: "START, PLUS, PREMIUM e ULTRA: escolha a velocidade ideal para sua casa ou empresa.",
       },
-      { property: "og:url", content: "/planos" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/planos" },
     ],
-    links: [{ rel: "canonical", href: "/planos" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/planos" }],
   }),
   component: Planos,
 });

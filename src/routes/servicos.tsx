@@ -7,6 +7,7 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "serviços de internet, suporte técnico internet, portal do assinante, aplicativo de tv, segunda via de boleto, instalação de internet fibra" },
       { title: "Serviços — Fiber Tech" },
       {
         name: "description",
@@ -18,9 +19,9 @@ export const Route = createFileRoute("/servicos")({
         property: "og:description",
         content: "Conheça todos os serviços Fiber Tech para sua casa e sua empresa.",
       },
-      { property: "og:url", content: "/servicos" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/servicos" },
     ],
-    links: [{ rel: "canonical", href: "/servicos" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/servicos" }],
   }),
   component: Servicos,
 });

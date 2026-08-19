@@ -26,6 +26,7 @@ import { SITE, WA } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "internet fibra óptica, provedor de internet, internet banda larga, internet 500 mega, Fiber Tech, internet Bahia, internet residencial, internet empresarial, wi-fi de alta velocidade" },
       { title: "Fiber Tech — Internet Fibra Óptica de Alta Velocidade" },
       {
         name: "description",
@@ -38,9 +39,9 @@ export const Route = createFileRoute("/")({
         content:
           "Conectando sua casa e empresa com velocidade, estabilidade e suporte especializado.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/" }],
   }),
   component: Home,
 });

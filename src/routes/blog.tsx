@@ -7,6 +7,7 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "blog de internet, dicas de wi-fi, velocidade de internet, fibra óptica dicas, Fiber Tech blog" },
       { title: "Blog — Dicas de Internet e Tecnologia | Fiber Tech" },
       {
         name: "description",
@@ -18,9 +19,9 @@ export const Route = createFileRoute("/blog")({
         property: "og:description",
         content: "Conteúdos sobre internet, tecnologia, fibra óptica e segurança digital.",
       },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/blog" }],
   }),
   component: Blog,
 });
