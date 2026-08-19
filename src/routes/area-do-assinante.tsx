@@ -29,9 +29,9 @@ export const Route = createFileRoute("/area-do-assinante")({
         property: "og:description",
         content: "Gerencie seu plano, faturas e suporte em um painel simples e seguro.",
       },
-      { property: "og:url", content: "/area-do-assinante" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/area-do-assinante" },
     ],
-    links: [{ rel: "canonical", href: "/area-do-assinante" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/area-do-assinante" }],
   }),
   component: Assinante,
 });

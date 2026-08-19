@@ -18,9 +18,9 @@ export const Route = createFileRoute("/sobre-nos")({
         property: "og:description",
         content: "Nossa história, missão e a tecnologia que conecta você ao mundo.",
       },
-      { property: "og:url", content: "/sobre-nos" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/sobre-nos" },
     ],
-    links: [{ rel: "canonical", href: "/sobre-nos" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/sobre-nos" }],
   }),
   component: Sobre,
 });

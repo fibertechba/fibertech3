@@ -60,9 +60,9 @@ export const Route = createFileRoute("/perguntas-frequentes")({
         property: "og:description",
         content: "Respostas rápidas sobre planos, instalação, faturas e suporte.",
       },
-      { property: "og:url", content: "/perguntas-frequentes" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/perguntas-frequentes" },
     ],
-    links: [{ rel: "canonical", href: "/perguntas-frequentes" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/perguntas-frequentes" }],
     scripts: [
       {
         type: "application/ld+json",

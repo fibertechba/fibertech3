@@ -15,9 +15,9 @@ export const Route = createFileRoute("/lgpd")({
         property: "og:description",
         content: "Nosso compromisso com a Lei Geral de Proteção de Dados.",
       },
-      { property: "og:url", content: "/lgpd" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/lgpd" },
     ],
-    links: [{ rel: "canonical", href: "/lgpd" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/lgpd" }],
   }),
   component: () => (
     <LegalPage

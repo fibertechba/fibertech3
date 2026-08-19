@@ -19,9 +19,9 @@ export const Route = createFileRoute("/planos")({
         property: "og:description",
         content: "START, PLUS, PREMIUM e ULTRA: escolha a velocidade ideal para sua casa ou empresa.",
       },
-      { property: "og:url", content: "/planos" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/planos" },
     ],
-    links: [{ rel: "canonical", href: "/planos" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/planos" }],
   }),
   component: Planos,
 });

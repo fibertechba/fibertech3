@@ -24,9 +24,9 @@ export const Route = createFileRoute("/cobertura")({
         property: "og:description",
         content: "Verifique a disponibilidade da internet fibra óptica no seu endereço.",
       },
-      { property: "og:url", content: "/cobertura" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/cobertura" },
     ],
-    links: [{ rel: "canonical", href: "/cobertura" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/cobertura" }],
   }),
   component: Cobertura,
 });

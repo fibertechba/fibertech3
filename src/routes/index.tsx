@@ -38,9 +38,9 @@ export const Route = createFileRoute("/")({
         content:
           "Conectando sua casa e empresa com velocidade, estabilidade e suporte especializado.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://fibertech3.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://fibertech3.lovable.app/" }],
   }),
   component: Home,
 });
