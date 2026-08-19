@@ -89,6 +89,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Fiber Tech: internet 100% fibra óptica com alta velocidade, baixa latência e suporte especializado. Conectando você ao mundo.",
       },
       { name: "author", content: "Fiber Tech" },
+      {
+        name: "keywords",
+        content:
+          "internet fibra óptica, provedor de internet, banda larga, internet residencial, internet empresarial, planos de internet, Fiber Tech, internet Bahia, wi-fi alta velocidade",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow" },
       { property: "og:site_name", content: "Fiber Tech" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
