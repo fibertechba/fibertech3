@@ -108,7 +108,7 @@ ErrorDocument 404 /index.html
 await writeFile(resolve(target, ".htaccess"), htaccess, "utf8");
 
 // Static sitemap.xml (the server route version does not exist on static hosting).
-const SITE_URL = process.env.SITE_URL ?? "https://www.seudominio.com.br";
+const SITE_URL = process.env.SITE_URL ?? "https://fibertech3.lovable.app";
 const ROUTES = [
   ["/", "weekly", "1.0"],
   ["/planos", "weekly", "0.9"],
