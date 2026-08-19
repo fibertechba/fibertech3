@@ -7,6 +7,7 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/sobre-nos")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "provedor de internet local, empresa de internet fibra óptica, sobre a Fiber Tech, internet Bahia" },
       { title: "Sobre Nós — Fiber Tech" },
       {
         name: "description",

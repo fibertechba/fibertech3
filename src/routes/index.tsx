@@ -26,6 +26,7 @@ import { SITE, WA } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "internet fibra óptica, provedor de internet, internet banda larga, internet 500 mega, Fiber Tech, internet Bahia, internet residencial, internet empresarial, wi-fi de alta velocidade" },
       { title: "Fiber Tech — Internet Fibra Óptica de Alta Velocidade" },
       {
         name: "description",

@@ -7,6 +7,7 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "blog de internet, dicas de wi-fi, velocidade de internet, fibra óptica dicas, Fiber Tech blog" },
       { title: "Blog — Dicas de Internet e Tecnologia | Fiber Tech" },
       {
         name: "description",

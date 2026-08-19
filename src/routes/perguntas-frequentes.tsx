@@ -49,6 +49,7 @@ const FAQ = [
 export const Route = createFileRoute("/perguntas-frequentes")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "dúvidas internet fibra, faq internet, franquia de dados, instalação internet dúvidas, suporte Fiber Tech" },
       { title: "Perguntas Frequentes — Fiber Tech" },
       {
         name: "description",

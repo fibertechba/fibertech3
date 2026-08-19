@@ -18,6 +18,7 @@ import { SITE, WA } from "@/lib/site";
 export const Route = createFileRoute("/area-do-assinante")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "área do assinante, central do assinante, segunda via de boleto, 2ª via internet, portal do cliente Fiber Tech" },
       { title: "Área do Assinante — Fiber Tech" },
       {
         name: "description",

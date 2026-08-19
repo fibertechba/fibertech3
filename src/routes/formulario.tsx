@@ -19,6 +19,7 @@ import {
 export const Route = createFileRoute("/formulario")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "cadastro internet fibra, contratar internet online, formulário de adesão internet, instalação de internet" },
       { title: "Formulário de Cadastro — Fiber Tech" },
       {
         name: "description",

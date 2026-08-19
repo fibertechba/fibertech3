@@ -9,6 +9,7 @@ import { sendLead } from "@/lib/leads";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "contato provedor de internet, telefone internet fibra, whatsapp internet, atendimento Fiber Tech, contratar internet" },
       { title: "Contato — Fale com a Fiber Tech" },
       {
         name: "description",

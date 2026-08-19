@@ -8,6 +8,7 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/planos")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "planos de internet, internet 100 mega, internet 200 mega, internet 300 mega, internet 500 mega, plano de internet barato, internet fibra óptica preço, Fiber Tech planos" },
       { title: "Planos de Internet Fibra Óptica — Fiber Tech" },
       {
         name: "description",

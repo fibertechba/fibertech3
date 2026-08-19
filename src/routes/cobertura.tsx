@@ -13,6 +13,7 @@ import { formatCEP, lookupCEP, onlyDigits } from "@/lib/validators";
 export const Route = createFileRoute("/cobertura")({
   head: () => ({
     meta: [
+      { name: "keywords", content: "cobertura de internet, consultar cobertura fibra óptica, internet no meu endereço, viabilidade técnica internet, cobertura Fiber Tech" },
       { title: "Cobertura — Consulte a disponibilidade | Fiber Tech" },
       {
         name: "description",
